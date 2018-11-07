@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Transpositor <ion-icon name="md-musical-note"></ion-icon></ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-content class="card-background-page pagina">
+
+    <ion-item>
+      <ion-label>Notas</ion-label>
+      <ion-select [(ngModel)]="notaSelecionada" multiple="true">
+        <ion-option *ngFor="let item of notas" [value]="item1">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-card-content>
+      <ion-label>
+        <h1>{{notaSelecionada}}</h1>
+      </ion-label>
+    </ion-card-content>
+
+
+    <ion-item>
+      <ion-label>Afinação Do Instrumento</ion-label>
+      <ion-select [(ngModel)]="afinacao">
+        <ion-option *ngFor="let item of notasDaAfinacao" [value]="item1">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br>
+    <br>
+    <button class="col text-center" ion-button color="secondary" (click)="transpor()">Transpor</button>
+
+
+    <ion-card-content>
+      <ion-label>
+        <h1>{{notasTranspostas}}</h1>
+      </ion-label>
+    </ion-card-content>
+
+  </ion-content>
+
+
+
+</ion-content>
